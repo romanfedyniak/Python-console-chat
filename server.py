@@ -47,6 +47,9 @@ class MessageHandler:
         while True:
             try:
                 msg = user.getMessage()
+                if not msg:
+                    self.removeUser(user)
+                    break
             except:
                 self.removeUser(user)
                 break
